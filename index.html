@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPTログイン・登録方法ガイド</title>
+    <title>ChatGPT ログイン・登録ガイド</title>
     <style>
         * {
             margin: 0;
@@ -12,239 +12,321 @@
         }
         
         body {
-            font-family: 'Segoe UI', 'メイリオ', Meiryo, sans-serif;
-            line-height: 1.8;
+            font-family: 'Segoe UI', 'メイリオ', Meiryo, 'Hiragino Kaku Gothic ProN', sans-serif;
+            line-height: 2;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            padding: 20px;
+            background: #ffffff;
+            padding: 0;
         }
         
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
         }
         
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #2c3e50;
             color: white;
-            padding: 40px 30px;
-            text-align: center;
+            padding: 50px 40px;
+            border-bottom: 4px solid #3498db;
         }
         
         header h1 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
         
         header p {
-            font-size: 1.1em;
-            opacity: 0.95;
+            font-size: 1.3em;
+            opacity: 0.9;
         }
         
         .content {
-            padding: 40px 30px;
+            padding: 50px 40px;
+            background: #ffffff;
         }
         
         h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin: 30px 0 20px 0;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            color: #2c3e50;
+            font-size: 2em;
+            margin: 50px 0 25px 0;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db;
+            font-weight: 600;
         }
         
         h3 {
-            color: #764ba2;
-            font-size: 1.4em;
-            margin: 25px 0 15px 0;
-            padding-left: 15px;
-            border-left: 4px solid #764ba2;
-        }
-        
-        .login-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 25px 0;
-        }
-        
-        .method-card {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 12px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-        
-        .method-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2);
-            border-color: #667eea;
-        }
-        
-        .method-card h4 {
-            color: #667eea;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .icon {
+            color: #34495e;
             font-size: 1.5em;
+            margin: 35px 0 20px 0;
+            padding-left: 20px;
+            border-left: 5px solid #3498db;
+            font-weight: 600;
         }
         
-        .step-list {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 25px;
+        p {
+            font-size: 1.15em;
             margin: 20px 0;
+            color: #444;
         }
         
-        .step-list ol {
-            margin-left: 20px;
-        }
-        
-        .step-list li {
-            margin: 15px 0;
-            padding: 10px;
-            background: white;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-        }
-        
-        .note {
+        .alert-box {
             background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
+            border: 3px solid #ffc107;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
         }
         
-        .note-title {
+        .alert-box-title {
             color: #856404;
             font-weight: bold;
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .alert-box p {
+            font-size: 1.2em;
+            color: #856404;
+            line-height: 1.8;
         }
         
         .info-box {
-            background: #d1ecf1;
-            border: 2px solid #17a2b8;
-            border-radius: 12px;
-            padding: 20px;
-            margin: 20px 0;
+            background: #e7f3ff;
+            border: 3px solid #3498db;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 40px 0;
         }
         
         .info-box-title {
-            color: #0c5460;
+            color: #2c3e50;
             font-weight: bold;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .info-box p {
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        
+        .step-container {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 40px;
+            margin: 30px 0;
+        }
+        
+        .step-container ol {
+            margin-left: 30px;
+            counter-reset: step-counter;
+            list-style: none;
+        }
+        
+        .step-container li {
+            margin: 30px 0;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            border-left: 6px solid #3498db;
+            position: relative;
+            font-size: 1.15em;
+            counter-increment: step-counter;
+        }
+        
+        .step-container li::before {
+            content: "手順 " counter(step-counter);
+            display: block;
+            font-weight: bold;
+            color: #3498db;
             font-size: 1.1em;
             margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        }
+        
+        .step-container strong {
+            color: #2c3e50;
+            font-size: 1.2em;
         }
         
         .button {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #3498db;
             color: white;
-            padding: 12px 30px;
-            border-radius: 25px;
+            padding: 18px 45px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.2em;
             transition: all 0.3s ease;
-            margin: 10px 5px;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         .button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            background: #2980b9;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         
         .image-container {
-            margin: 30px 0;
+            margin: 40px 0;
             text-align: center;
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            border: 2px solid #dee2e6;
         }
         
         .image-container img {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            border: 3px solid #e9ecef;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid #dee2e6;
         }
         
         .image-caption {
-            margin-top: 12px;
-            font-size: 0.9em;
+            margin-top: 15px;
+            font-size: 1em;
             color: #666;
-            font-style: italic;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 50px 0;
+            padding: 50px 40px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 2px solid #dee2e6;
+        }
+        
+        .cta-section h2 {
+            border: none;
+            margin-bottom: 25px;
+        }
+        
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .method-box {
+            background: #ffffff;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .method-box h4 {
+            color: #2c3e50;
+            font-size: 1.4em;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+        
+        .method-box p {
+            font-size: 1.1em;
+            color: #666;
+        }
+        
+        .icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            margin: 20px 0 20px 40px;
+            font-size: 1.15em;
+        }
+        
+        ul li {
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 1em;
+        }
+        
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
         }
         
         .screenshot-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
         }
         
-        .screenshot-card {
+        .screenshot-box {
             background: white;
-            border-radius: 12px;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
         }
         
-        .screenshot-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-        
-        .screenshot-card img {
+        .screenshot-box img {
             width: 100%;
-            height: 200px;
+            height: 250px;
             object-fit: cover;
+            border-bottom: 2px solid #dee2e6;
         }
         
-        .screenshot-card-content {
-            padding: 15px;
+        .screenshot-box-content {
+            padding: 25px;
         }
         
-        .screenshot-card-content h4 {
-            color: #667eea;
-            margin-bottom: 8px;
+        .screenshot-box-content h4 {
+            color: #2c3e50;
+            font-size: 1.3em;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
         
-        footer {
-            background: #f8f9fa;
-            padding: 20px;
-            text-align: center;
+        .screenshot-box-content p {
+            font-size: 1.1em;
             color: #666;
-            font-size: 0.9em;
+            margin: 0;
         }
         
         @media (max-width: 768px) {
+            header {
+                padding: 30px 20px;
+            }
+            
             header h1 {
-                font-size: 1.6em;
+                font-size: 1.8em;
             }
             
             .content {
-                padding: 20px 15px;
+                padding: 30px 20px;
             }
             
-            .login-methods {
+            h2 {
+                font-size: 1.6em;
+            }
+            
+            h3 {
+                font-size: 1.3em;
+            }
+            
+            .method-grid, .screenshot-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -253,242 +335,287 @@
 <body>
     <div class="container">
         <header>
-            <h1>🤖 ChatGPTログイン・登録方法ガイド</h1>
-            <p>初めての方でも簡単にアクセスできる完全ガイド</p>
+            <h1>ChatGPT ログイン・登録ガイド</h1>
+            <p>初心者の方でも安心してご利用いただけます</p>
         </header>
         
         <div class="content">
+            <!-- アクセスボタン -->
+            <div class="cta-section">
+                <h2>ChatGPT公式ページはこちら</h2>
+                <p style="font-size: 1.2em; margin-bottom: 30px;">下のボタンをクリックしてアクセスしてください</p>
+                <a href="https://chatgpt.com/auth/login?openaicom_referred=true" class="button" target="_blank">ChatGPT 公式ページを開く</a>
+            </div>
+            
+            <!-- ChatGPTとは -->
             <section>
-                <div style="text-align: center; margin: 30px 0; padding: 25px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px;">
-                    <h3 style="color: white; margin-bottom: 15px; font-size: 1.5em;">🚀 今すぐChatGPTにアクセス</h3>
-                    <p style="color: white; margin-bottom: 20px; opacity: 0.95;">以下のボタンから公式ページへアクセスできます</p>
-                    <a href="https://chatgpt.com/auth/login?openaicom_referred=true" class="button" target="_blank" style="background: white; color: #667eea; font-size: 1.1em; padding: 15px 40px;">ChatGPT 公式ページへ →</a>
-                </div>
+                <h2>ChatGPTとは？</h2>
+                <p>ChatGPT（チャットジーピーティー）は、AIと会話ができるサービスです。質問をすると、AIが答えてくれます。</p>
                 
                 <div class="image-container">
-                    <img src="https://assets.anakin.ai/blog/2024/01/pika-1705549620409-1x.png" alt="ChatGPTログイン画面">
-                    <div class="image-caption">ChatGPTのログイン画面例</div>
+                    <img src="https://assets.anakin.ai/blog/2024/01/pika-1705549620409-1x.png" alt="ChatGPTの画面">
+                    <div class="image-caption">ChatGPTの画面イメージ</div>
                 </div>
                 
-                <h2>📱 ChatGPTへのアクセス方法</h2>
-                <p>ChatGPTは以下の複数の方法でアクセスできます。ご自身の利用環境に合わせて選択してください。</p>
-                
-                <div class="login-methods">
-                    <div class="method-card">
-                        <h4><span class="icon">🌐</span>Webブラウザ</h4>
-                        <p>PCやスマートフォンのブラウザから直接アクセス。最も一般的な方法です。</p>
+                <h3>使い方は簡単です</h3>
+                <div class="method-grid">
+                    <div class="method-box">
+                        <div class="icon">🌐</div>
+                        <h4>パソコンで使う</h4>
+                        <p>インターネットブラウザから使えます</p>
                     </div>
                     
-                    <div class="method-card">
-                        <h4><span class="icon">📱</span>iOSアプリ</h4>
-                        <p>iPhone・iPad向けの専用アプリ。App Storeからダウンロード可能。</p>
+                    <div class="method-box">
+                        <div class="icon">📱</div>
+                        <h4>スマホで使う</h4>
+                        <p>iPhone・Androidアプリがあります</p>
                     </div>
                     
-                    <div class="method-card">
-                        <h4><span class="icon">🤖</span>Androidアプリ</h4>
-                        <p>Android端末向けの公式アプリ。Google Playストアから入手できます。</p>
+                    <div class="method-box">
+                        <div class="icon">💻</div>
+                        <h4>タブレットで使う</h4>
+                        <p>iPadなどでも使えます</p>
                     </div>
                 </div>
             </section>
             
+            <!-- 重要な注意 -->
+            <div class="alert-box">
+                <div class="alert-box-title">⚠️ まず確認してください</div>
+                <p><strong>ChatGPTを初めて使う方</strong>は、まず「アカウント登録」が必要です。</p>
+                <p><strong>すでにアカウントをお持ちの方</strong>は、「ログイン方法」までスクロールしてください。</p>
+            </div>
+            
+            <!-- 新規登録 -->
             <section>
-                <div class="note">
-                    <div class="note-title">⚠️ アカウントがない方へ</div>
-                    <p>まだChatGPTのアカウントをお持ちでない方は、まず<strong>新規登録</strong>を行ってください。すでにアカウントをお持ちの方は、この部分をスキップして「ログイン方法の種類」セクションへお進みください。</p>
-                </div>
-                
-                <h2>✨ 新規登録方法（アカウントがない方）</h2>
+                <h2>【初めての方】アカウント登録の方法</h2>
                 
                 <div class="image-container">
-                    <img src="https://weam.ai/app/uploads/2023/08/chatgpt-signup-page.png" alt="ChatGPT新規登録画面">
-                    <div class="image-caption">ChatGPT新規登録ページ</div>
+                    <img src="https://weam.ai/app/uploads/2023/08/chatgpt-signup-page.png" alt="登録画面">
+                    <div class="image-caption">アカウント登録の画面</div>
                 </div>
                 
-                <p>まだアカウントをお持ちでない方は、以下の手順で新規登録できます。</p>
+                <p style="font-size: 1.3em; font-weight: bold; color: #2c3e50;">まず、アカウントを作りましょう。無料でできます。</p>
                 
-                <div class="step-list">
+                <div class="step-container">
                     <ol>
-                        <li><strong>ChatGPT公式サイトへアクセス</strong><br>
-                        ブラウザで<a href="https://chatgpt.com/auth/login?openaicom_referred=true" target="_blank" style="color: #667eea; font-weight: bold;">ChatGPT公式ページ</a>を開きます</li>
+                        <li>
+                            <strong>ChatGPTのページを開く</strong><br>
+                            <a href="https://chatgpt.com/auth/login?openaicom_referred=true" target="_blank" style="color: #3498db; font-weight: bold; font-size: 1.1em;">こちらのリンク</a>をクリックしてください
+                        </li>
                         
-                        <li><strong>「Sign up」をクリック</strong><br>
-                        新規登録ボタンを選択します</li>
+                        <li>
+                            <strong>「Sign up」ボタンを押す</strong><br>
+                            画面に出てくる「Sign up（サインアップ）」というボタンを押してください
+                        </li>
                         
-                        <li><strong>登録方法を選択</strong><br>
-                        メールアドレス、Google、Microsoft、Appleアカウントから選択</li>
+                        <li>
+                            <strong>登録方法を選ぶ</strong><br>
+                            次の中から1つ選んでください：
+                            <ul style="margin-top: 15px;">
+                                <li><strong>メールアドレス</strong>を使う</li>
+                                <li><strong>Googleアカウント</strong>を使う（Gmail等）</li>
+                                <li><strong>Microsoftアカウント</strong>を使う</li>
+                                <li><strong>Appleアカウント</strong>を使う（iPhone等）</li>
+                            </ul>
+                        </li>
                         
-                        <li><strong>必要情報を入力</strong><br>
-                        名前やメールアドレスなど必要な情報を入力します</li>
+                        <li>
+                            <strong>必要な情報を入力する</strong><br>
+                            名前とメールアドレスを入力してください。パスワードも決めてください。
+                        </li>
                         
-                        <li><strong>メール認証</strong><br>
-                        登録したメールアドレスに届く確認メールから認証を完了</li>
+                        <li>
+                            <strong>メールを確認する</strong><br>
+                            登録したメールアドレスに確認メールが届きます。メール内のリンクをクリックしてください。
+                        </li>
                         
-                        <li><strong>プロフィール設定</strong><br>
-                        基本的なプロフィール情報を設定して完了</li>
+                        <li>
+                            <strong>登録完了</strong><br>
+                            これでアカウントが作れました！そのままログインして使えます。
+                        </li>
                     </ol>
                 </div>
             </section>
             
+            <!-- ログイン方法 -->
+            <div class="info-box">
+                <div class="info-box-title">✅ すでにアカウントをお持ちの方</div>
+                <p>ここから下は、すでにアカウントを作った方のログイン方法です。</p>
+            </div>
+            
             <section>
-                <div class="info-box">
-                    <div class="info-box-title">✅ アカウントをお持ちの方へ</div>
-                    <p>すでにChatGPTのアカウントをお持ちの方は、以下のログイン方法をご利用ください。</p>
-                </div>
-                
-                <h2>🔐 ログイン方法の種類（アカウント登録済みの方）</h2>
-                <p>ChatGPTでは、複数のログイン方法を提供しています。お好みの方法を選択できます。</p>
+                <h2>【アカウント登録済みの方】ログイン方法</h2>
                 
                 <div class="image-container">
-                    <img src="https://pictory.ai/wp-content/uploads/2024/02/2024_-1.png" alt="ChatGPTログインオプション">
-                    <div class="image-caption">各種ログインオプション画面</div>
+                    <img src="https://pictory.ai/wp-content/uploads/2024/02/2024_-1.png" alt="ログイン画面">
+                    <div class="image-caption">ログイン方法を選ぶ画面</div>
                 </div>
                 
-                <h3>1. メールアドレスでログイン</h3>
+                <p style="font-size: 1.3em; font-weight: bold; color: #2c3e50;">登録した方法でログインしてください。</p>
+                
+                <h3>方法1：メールアドレスでログイン</h3>
                 
                 <div class="screenshot-grid">
-                    <div class="screenshot-card">
-                        <img src="https://pictory.ai/wp-content/uploads/2024/02/entering-your-email-adress-in-the-chatgpt-signup-screen.png" alt="メールアドレス入力画面">
-                        <div class="screenshot-card-content">
-                            <h4>Step 1: メール入力</h4>
-                            <p>登録済みのメールアドレスを入力します</p>
+                    <div class="screenshot-box">
+                        <img src="https://pictory.ai/wp-content/uploads/2024/02/entering-your-email-adress-in-the-chatgpt-signup-screen.png" alt="メール入力">
+                        <div class="screenshot-box-content">
+                            <h4>①メールアドレスを入力</h4>
+                            <p>登録したメールアドレスを入力します</p>
                         </div>
                     </div>
-                    <div class="screenshot-card">
-                        <img src="https://static-assets.codecademy.com/ai_tutorials/getting_started_with_chatgpt/Enter_password_Step.png" alt="パスワード入力画面">
-                        <div class="screenshot-card-content">
-                            <h4>Step 2: パスワード入力</h4>
-                            <p>設定したパスワードでログイン</p>
+                    <div class="screenshot-box">
+                        <img src="https://static-assets.codecademy.com/ai_tutorials/getting_started_with_chatgpt/Enter_password_Step.png" alt="パスワード入力">
+                        <div class="screenshot-box-content">
+                            <h4>②パスワードを入力</h4>
+                            <p>設定したパスワードを入力します</p>
                         </div>
                     </div>
                 </div>
                 
-                <div class="step-list">
+                <div class="step-container">
                     <ol>
-                        <li><strong>ChatGPT公式サイトにアクセス</strong><br>
-                        ブラウザで<a href="https://chatgpt.com/auth/login?openaicom_referred=true" target="_blank" style="color: #667eea; font-weight: bold;">ChatGPTログインページ</a>を開きます</li>
+                        <li>
+                            <strong>ChatGPTのページを開く</strong><br>
+                            <a href="https://chatgpt.com/auth/login?openaicom_referred=true" target="_blank" style="color: #3498db; font-weight: bold; font-size: 1.1em;">こちらのリンク</a>をクリックしてください
+                        </li>
                         
-                        <li><strong>「Log in」ボタンをクリック</strong><br>
-                        トップページの右上にあるログインボタンを押します</li>
+                        <li>
+                            <strong>「Log in」ボタンを押す</strong><br>
+                            「Log in（ログイン）」というボタンを押してください
+                        </li>
                         
-                        <li><strong>メールアドレスを入力</strong><br>
-                        登録済みのメールアドレスを入力します</li>
+                        <li>
+                            <strong>メールアドレスを入力</strong><br>
+                            登録したメールアドレスを入力してください
+                        </li>
                         
-                        <li><strong>パスワードを入力</strong><br>
-                        設定したパスワードを入力してログインします</li>
+                        <li>
+                            <strong>パスワードを入力</strong><br>
+                            設定したパスワードを入力してください
+                        </li>
+                        
+                        <li>
+                            <strong>ログイン完了</strong><br>
+                            これでChatGPTが使えます！
+                        </li>
                     </ol>
                 </div>
                 
-                <h3>2. Googleアカウントでログイン</h3>
+                <h3>方法2：Googleアカウントでログイン</h3>
                 
                 <div class="image-container">
-                    <img src="https://enozom.com/wp-content/uploads/2024/08/chat.jpg" alt="Google・Microsoft・Appleログインボタン" style="max-width: 500px;">
-                    <div class="image-caption">Google、Microsoft、Appleアカウントでのログインオプション</div>
+                    <img src="https://enozom.com/wp-content/uploads/2024/08/chat.jpg" alt="ソーシャルログインボタン" style="max-width: 600px;">
+                    <div class="image-caption">Google、Microsoft、Appleのボタン</div>
                 </div>
                 
-                <div class="step-list">
+                <div class="step-container">
                     <ol>
-                        <li><strong>「Continue with Google」を選択</strong><br>
-                        ログイン画面でGoogleアイコンのボタンをクリック</li>
+                        <li>
+                            <strong>「Continue with Google」を押す</strong><br>
+                            Googleのマークがあるボタンを押してください
+                        </li>
                         
-                        <li><strong>Googleアカウントを選択</strong><br>
-                        使用するGoogleアカウントを選びます</li>
+                        <li>
+                            <strong>Googleアカウントを選ぶ</strong><br>
+                            使いたいGoogleアカウント（Gmail）を選んでください
+                        </li>
                         
-                        <li><strong>アクセス許可</strong><br>
-                        ChatGPTへのアクセスを許可して完了</li>
+                        <li>
+                            <strong>ログイン完了</strong><br>
+                            これでChatGPTが使えます！
+                        </li>
                     </ol>
                 </div>
                 
-                <h3>3. Microsoftアカウントでログイン</h3>
-                <div class="step-list">
+                <h3>方法3：Microsoftアカウントでログイン</h3>
+                <div class="step-container">
                     <ol>
-                        <li><strong>「Continue with Microsoft Account」を選択</strong><br>
-                        ログイン画面でMicrosoftアイコンのボタンをクリック</li>
+                        <li>
+                            <strong>「Continue with Microsoft Account」を押す</strong><br>
+                            Microsoftのマークがあるボタンを押してください
+                        </li>
                         
-                        <li><strong>Microsoftアカウントでサインイン</strong><br>
-                        Microsoftアカウントの認証を行います</li>
+                        <li>
+                            <strong>Microsoftアカウントでログイン</strong><br>
+                            Microsoftのメールアドレスとパスワードを入力してください
+                        </li>
                         
-                        <li><strong>連携を承認</strong><br>
-                        アカウント連携を承認してログイン完了</li>
+                        <li>
+                            <strong>ログイン完了</strong><br>
+                            これでChatGPTが使えます！
+                        </li>
                     </ol>
                 </div>
                 
-                <h3>4. Appleアカウントでログイン</h3>
-                <div class="step-list">
+                <h3>方法4：Appleアカウントでログイン</h3>
+                <div class="step-container">
                     <ol>
-                        <li><strong>「Continue with Apple」を選択</strong><br>
-                        ログイン画面でAppleアイコンのボタンをクリック</li>
+                        <li>
+                            <strong>「Continue with Apple」を押す</strong><br>
+                            Appleのマークがあるボタンを押してください
+                        </li>
                         
-                        <li><strong>Apple IDで認証</strong><br>
-                        Apple IDとパスワードで認証します</li>
+                        <li>
+                            <strong>Apple IDでログイン</strong><br>
+                            Apple IDとパスワードを入力してください
+                        </li>
                         
-                        <li><strong>二段階認証（必要な場合）</strong><br>
-                        設定している場合は追加の認証を行います</li>
+                        <li>
+                            <strong>ログイン完了</strong><br>
+                            これでChatGPTが使えます！
+                        </li>
                     </ol>
                 </div>
             </section>
             
+            <!-- 困った時 -->
             <section>
-                <div class="note">
-                    <div class="note-title">⚠️ 注意事項</div>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>ChatGPTの利用には13歳以上である必要があります</li>
-                        <li>一部の国や地域では利用できない場合があります</li>
-                        <li>パスワードは安全性の高いものを設定してください</li>
-                        <li>二段階認証を設定すると、よりセキュアに利用できます</li>
-                    </ul>
-                </div>
-                
-                <div class="info-box">
-                    <div class="info-box-title">💡 便利な機能</div>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li><strong>無料プラン</strong>: 基本的な機能を無料で利用可能</li>
-                        <li><strong>ChatGPT Plus</strong>: 月額制の有料プランでより高速で高性能</li>
-                        <li><strong>チャット履歴</strong>: 過去の会話を保存・検索できます</li>
-                        <li><strong>カスタム指示</strong>: 自分好みの応答スタイルを設定可能</li>
-                    </ul>
-                </div>
-            </section>
-            
-            <section>
-                <h2>🔧 ログインできない場合の対処法</h2>
+                <h2>困った時の対処法</h2>
                 
                 <h3>パスワードを忘れた場合</h3>
-                <p>ログイン画面の「Forgot password?」をクリックし、登録メールアドレスを入力してパスワードリセット用のメールを受信します。</p>
+                <p>ログイン画面に「Forgot password?（パスワードを忘れた）」というリンクがあります。</p>
+                <p>そこを押して、メールアドレスを入力すると、パスワードを変更できるメールが届きます。</p>
                 
-                <h3>アカウントがロックされた場合</h3>
-                <p>複数回ログインに失敗するとアカウントが一時的にロックされることがあります。しばらく時間を置いてから再度お試しください。</p>
+                <h3>ログインできない場合</h3>
+                <p>何度もパスワードを間違えると、しばらくログインできなくなります。</p>
+                <p>10分ほど待ってから、もう一度試してください。</p>
                 
-                <h3>メール認証が届かない場合</h3>
-                <p>迷惑メールフォルダを確認してください。それでも届かない場合は、メールアドレスが正しいか確認し、再送信を試みてください。</p>
-                
-                <div class="screenshot-grid">
-                    <div class="screenshot-card">
-                        <img src="https://pictory.ai/wp-content/uploads/2024/02/chatgpt-mobile-app-screen.png" alt="ChatGPTモバイルアプリ">
-                        <div class="screenshot-card-content">
-                            <h4>モバイルアプリ版</h4>
-                            <p>iOS・Android向けの公式アプリ</p>
-                        </div>
-                    </div>
-                    <div class="screenshot-card">
-                        <img src="https://s3-alpha.figma.com/hub/file/2863697913/e5d57120-2c25-4e27-a4ca-7974ba2a9ce9-cover.png" alt="ChatGPT画面UI">
-                        <div class="screenshot-card-content">
-                            <h4>チャット画面</h4>
-                            <p>実際の会話インターフェース</p>
-                        </div>
-                    </div>
-                </div>
+                <h3>メールが届かない場合</h3>
+                <p>迷惑メールフォルダを確認してください。</p>
+                <p>それでも届かない場合は、メールアドレスが正しいか確認してください。</p>
             </section>
             
-            <section style="text-align: center; margin: 40px 0;">
-                <h2>🚀 今すぐChatGPTを始めましょう</h2>
-                <p style="margin: 20px 0;">上記の方法でログインまたは登録して、AIとの会話を楽しんでください。</p>
-                <a href="https://chatgpt.com/auth/login?openaicom_referred=true" class="button" target="_blank" style="font-size: 1.2em; padding: 15px 40px;">ChatGPT 公式ページへ →</a>
+            <!-- 最後のCTA -->
+            <div class="cta-section">
+                <h2>今すぐChatGPTを始めましょう</h2>
+                <p style="font-size: 1.2em; margin-bottom: 30px;">下のボタンからアクセスしてください</p>
+                <a href="https://chatgpt.com/auth/login?openaicom_referred=true" class="button" target="_blank">ChatGPT 公式ページを開く</a>
+            </div>
+            
+            <!-- 補足情報 -->
+            <section>
+                <h2>補足情報</h2>
+                
+                <h3>料金について</h3>
+                <ul>
+                    <li><strong>無料プラン</strong>：基本的な機能は無料で使えます</li>
+                    <li><strong>有料プラン（ChatGPT Plus）</strong>：月額料金で、より高性能な機能が使えます</li>
+                </ul>
+                
+                <h3>注意事項</h3>
+                <ul>
+                    <li>13歳以上の方が利用できます</li>
+                    <li>一部の国では使えない場合があります</li>
+                    <li>パスワードは他人に教えないでください</li>
+                </ul>
             </section>
         </div>
         
         <footer>
-            <p>本ガイドは情報提供を目的としています。最新の情報は公式サイトをご確認ください。</p>
-            <p style="margin-top: 10px;">参照元: <a href="https://www.ai-souken.com/article/chatgpt-login-methods-explained" target="_blank" style="color: #667eea;">AI総研 - ChatGPTログイン方法解説</a></p>
+            <p>このガイドは情報提供を目的としています</p>
+            <p style="margin-top: 10px;">最新の情報は<a href="https://chatgpt.com" target="_blank">ChatGPT公式サイト</a>でご確認ください</p>
+            <p style="margin-top: 15px;">参考: <a href="https://www.ai-souken.com/article/chatgpt-login-methods-explained" target="_blank">AI総研 - ChatGPTログイン方法解説</a></p>
         </footer>
     </div>
 </body>
